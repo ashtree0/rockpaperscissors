@@ -8,6 +8,13 @@
 <body>
 
     <script> 
+
+        // Keeps track of wins, losses, and ties
+        let playerWin = 0;
+        let playerLose = 0;
+        let playerTie = 0;
+        
+        // Randomizes computer choice
         function getComputerChoice() {
             const rockPaperScissors = ["Rock", "Paper", "Scissors"];
             return rockPaperScissors[Math.floor(Math.random() * 3)];
@@ -20,39 +27,48 @@
             
             // Player Win
             if (playerSelect === "Rock" && computerSelect === "Scissors") {
+                playerWin++;
                 alert("You win! Rock beats Scissors.");
             } else if (playerSelect === "Scissors" && computerSelect === "Paper") {
+                playerWin++;
                 alert("You win! Scissors beats Paper.");
             } else if (playerSelect === "Paper" && computerSelect === "Rock") {
+                playerWin++;
                 alert("You win! Paper beats Rock.");
             }
 
             // Computer Win
             if (computerSelect === "Rock" && playerSelect === "Scissors") {
-                alert("You win! Rock beats Scissors.");
+                playerLose++;
+                alert("You lost. Rock beats Scissors.");
             } else if (computerSelect === "Scissors" && playerSelect === "Paper") {
-                alert("You win! Scissors beats Paper.");
+                playerLose++;
+                alert("You lost. Scissors beats Paper.");
             } else if (computerSelect === "Paper" && playerSelect === "Rock") {
-                alert("You win! Paper beats Rock.");
+                playerLose++;
+                alert("You lost. Paper beats Rock.");
             }
 
             // Player & Computer Tie
             if (computerSelect === "Scissors" && playerSelect === "Scissors") {
+                playerTie++;
                 alert("It's a tie! You both chose Scissors.");
             } else if (computerSelect === "Paper" && playerSelect === "Paper") {
+                playerTie++;
                 alert("It's a tie! You both chose Paper.");
             } else if (computerSelect === "Rock" && playerSelect === "Rock") {
+                playerTie++;
                 alert("It's a tie! You both chose Rock.");
             }
         }
 
         function game() {
-            let gameScore = 0;
             for (gameRound = 0; gameRound < 5; gameRound++) {
                let playerInput = prompt("Rock, Paper, or Scissors?");
                let computerInput = getComputerChoice();
                playRound(playerInput,computerInput);
             }
+            console.log(`You won ${playerWin} times! You lost ${playerLose} times. You tied with the computer ${playerTie} times.`);
         }
 
 
