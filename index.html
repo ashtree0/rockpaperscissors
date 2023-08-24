@@ -26,6 +26,15 @@
             } else if (playerSelect === "Paper" && computerSelect === "Rock") {
                 return "You win! Paper beats Rock."
             }
+
+            // Computer Win
+            if (computerSelect === "Rock" && playerSelect === "Scissors") {
+                return "You win! Rock beats Scissors."
+            } else if (computerSelect === "Scissors" && playerSelect === "Paper") {
+                return "You win! Scissors beats Paper";
+            } else if (computerSelect === "Paper" && playerSelect === "Rock") {
+                return "You win! Paper beats Rock."
+            }
         }
 
         const playerSelection = "scissors";
