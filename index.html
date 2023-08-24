@@ -22,7 +22,7 @@
             if (playerSelect === "Rock" && computerSelect === "Scissors") {
                 return "You win! Rock beats Scissors."
             } else if (playerSelect === "Scissors" && computerSelect === "Paper") {
-                return "You win! Scissors beats Paper";
+                return "You win! Scissors beats Paper.";
             } else if (playerSelect === "Paper" && computerSelect === "Rock") {
                 return "You win! Paper beats Rock."
             }
@@ -31,9 +31,18 @@
             if (computerSelect === "Rock" && playerSelect === "Scissors") {
                 return "You win! Rock beats Scissors."
             } else if (computerSelect === "Scissors" && playerSelect === "Paper") {
-                return "You win! Scissors beats Paper";
+                return "You win! Scissors beats Paper.";
             } else if (computerSelect === "Paper" && playerSelect === "Rock") {
                 return "You win! Paper beats Rock."
+            }
+
+            // Player & Computer Tie
+            if (computerSelect === "Scissors" && playerSelect === "Scissors") {
+                return "It's a tie! You both chose Scissors.";
+            } else if (computerSelect === "Paper" && playerSelect === "Paper") {
+                return "It's a tie! You both chose Paper.";
+            } else if (computerSelect === "Rock" && playerSelect === "Rock") {
+                return "It's a tie! You both chose Rock.";
             }
         }
 
